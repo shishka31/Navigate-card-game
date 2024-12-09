@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карточная Игра</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        #game { display: flex; justify-content: center; }
+        .card { width: 100px; height: 150px; margin: 10px; background-color: lightblue; text-align: center; line-height: 150px; }
+    </style>
+</head>
+<body>
+    <h1>Карточная Игра</h1>
+    <div id="game"></div>
+    <button onclick="startGame()">Начать Игру</button>
+
+    <script>
+        const cards = ['Карта 1', 'Карта 2', 'Карта 3', 'Карта 4'];
+        function startGame() {
+            const gameArea = document.getElementById('game');
+            gameArea.innerHTML = ''; // Очищаем игровую область
+            cards.forEach(card => {
+                const cardDiv = document.createElement('div');
+                cardDiv.className = 'card';
+                cardDiv.innerText = card;
+                gameArea.appendChild(cardDiv);
+            });
+        }
+    </script>
+</body>
+</html>
